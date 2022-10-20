@@ -537,7 +537,7 @@ body {
   
   .like-container{
     height: 50px;
-    width: 260px;
+    width: 200px;
     margin-right: 100px;
     border: 3px solid #686d76;
     border-radius: 8px;
@@ -563,10 +563,9 @@ body {
   .Icon-image {
     height: 200px;
     margin-top: 50px;
-    margin-right: 300px;
+   
     border: 10px solid #686d76;
     border-radius: 360px;
-  display: flex;
   justify-content: space-between;
     
     cursor: pointer;
