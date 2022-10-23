@@ -1,0 +1,41 @@
+
+<%- include('partials/_header') %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 offset-md-3 card">
+      <div class="card-body">
+        <form action="/update/<%= data.id %>" method="POST">
+          <div class="form-group">
+            <input type="text" name="nombre" value="<%= data.nombre%>" placeholder="Nombre" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="apellido" value="<%= data.apellido%>" placeholder="Apellido" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="correo" value="<%= data.correo%>" placeholder="Correo electrónico" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="telefono" value="<%= data.telefono%>" placeholder="Número de elefono" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="id_conjunto" value="<%= data.id_conjunto%>" placeholder="Id Conjunto" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="nro_torre" value="<%= data.nro_torre%>" placeholder="Número de Torre" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="nro_apartamento" value="<%= data.nro_apartamento%>" placeholder="Número de Apartamento" class="form-control">
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            save customer
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/_footer') %>
+
