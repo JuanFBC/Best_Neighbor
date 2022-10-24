@@ -15,11 +15,11 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "dev": "nodemon src/app.js",
-    "start": "nodemon src/Index.pug"
+    "dev": "nodemon src/app.js"
+
   },
   "keywords": [],
   "author": "",
   "license": "ISC"
 }
-
+ 
