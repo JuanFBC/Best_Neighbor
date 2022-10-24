@@ -10,9 +10,8 @@ const app = express();
 // importing routes
 const customerRoutes = require('./routes/customer');
 
-
 // settings
-app.get("/", function(req, res){
+app.get("/a", function(req, res){
 res.sendfile(__dirname + "/Index.html");    //aqui envias el HTML
 });
 app.get("/backgrounds", function(req, res){
@@ -41,14 +40,17 @@ app.use(myConnection(mysql, {
   host: 'localhost',
   user: 'root',
   password: '1234',
-  port: 3307,
+  port: 3306,
   database: 'USUARIOS'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 
 // routes
-app.use('/f', customerRoutes);
-
+app.use('/', customerRoutes);
+app.use(Inicio);
+function Inicio(req, res){
+  res.sendfile(__dirname + "/Index.html");
+};
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
 
