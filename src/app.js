@@ -33,7 +33,7 @@ app.use(express.urlencoded({extended: false}));
 
 // routes
 //app.use('/a', customerRoutes);
-app.use('/', customerRoutes);
+app.use('/a', customerRoutes);
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
