@@ -13,7 +13,24 @@ const customerRoutes = require('./routes/customer');
 // settings
 
 
+app.get("/", function(req, res){
+res.sendfile(__dirname + "/Index.html");    //aqui envias el HTML
+});
+app.get("/backgrounds", function(req, res){
+  res.sendfile(__dirname + "/backgrounds/03.png");    //aqui envias el HTML
+});
 
+app.get("/Inicio", function(req, res){
+  res.sendfile(__dirname + "/Inicio/layout.css");    //aqui envias el HTML
+});
+
+app.get("/framework.css", function(req, res){
+  res.sendfile(__dirname + "/Inicio/framework.css");    //aqui envias el HTML
+});
+
+app.get("/webfonts/css/fontawesome-all.min.css", function(req, res){
+  res.sendfile(__dirname + "/webfonts/css/fontawesome-all.min.css");    //aqui envias el HTML
+});
 
 
 app.set('port', process.env.PORT || 3000);
@@ -33,7 +50,7 @@ app.use(express.urlencoded({extended: false}));
 
 // routes
 //app.use('/a', customerRoutes);
-app.use('/', customerRoutes);
+app.use('/a', customerRoutes);
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -46,25 +63,3 @@ app.listen(app.get('port'), () => {
   //res.sendfile(__dirname + "/Index.html");
 //};
 //app.use(Inicio);
-
-
-
-
-app.get("/", function(req, res){
-  res.sendfile(__dirname + "/Index.html");    //aqui envias el HTML
-  });
-  app.get("/backgrounds", function(req, res){
-    res.sendfile(__dirname + "/backgrounds/03.png");    //aqui envias el HTML
-  });
-  
-  app.get("/Inicio", function(req, res){
-    res.sendfile(__dirname + "/Inicio/layout.css");    //aqui envias el HTML
-  });
-  
-  app.get("/framework.css", function(req, res){
-    res.sendfile(__dirname + "/Inicio/framework.css");    //aqui envias el HTML
-  });
-  
-  app.get("/webfonts/css/fontawesome-all.min.css", function(req, res){
-    res.sendfile(__dirname + "/webfonts/css/fontawesome-all.min.css");    //aqui envias el HTML
-  });
