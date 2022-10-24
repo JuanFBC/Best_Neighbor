@@ -3,6 +3,7 @@ const express = require('express'),
       morgan = require('morgan'),
       mysql = require('mysql'),
       myConnection = require('express-myconnection');
+      const http = require('http');
 
 const app = express();
 
@@ -10,6 +11,9 @@ const app = express();
 const customerRoutes = require('./routes/customer');
 
 // settings
+app.get("/", function(req, res){
+  res.sendfile(__dirname + "/Index.html");    //aqui envias el HTML
+});
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -20,7 +24,7 @@ app.use(myConnection(mysql, {
   host: 'localhost',
   user: 'root',
   password: '1234',
-  port: 3306,
+  port: 3307,
   database: 'USUARIOS'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
