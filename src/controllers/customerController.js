@@ -19,7 +19,7 @@ controller.save = (req, res) => {
   req.getConnection((err, connection) => {
     const query = connection.query('INSERT INTO residente set ?', data, (err, residente) => {
       console.log(residente)
-      res.redirect('/');
+      res.redirect('/f');
     })
   })
 };
@@ -28,7 +28,7 @@ controller.edit = (req, res) => {
   const { id } = req.params;
   req.getConnection((err, conn) => {
     conn.query("SELECT * FROM residente WHERE id = ?", [id], (err, rows) => {
-      res.render('residentes_edit', {
+      res.render('customers_edit', {
         data: rows[0]
       })
     });
@@ -41,7 +41,7 @@ controller.update = (req, res) => {
   req.getConnection((err, conn) => {
 
   conn.query('UPDATE residente set ? where id = ?', [newresidente, id], (err, rows) => {
-    res.redirect('/');
+    res.redirect('/f');
   });
   });
 };
@@ -50,7 +50,7 @@ controller.delete = (req, res) => {
   const { id } = req.params;
   req.getConnection((err, connection) => {
     connection.query('DELETE FROM residente WHERE id = ?', [id], (err, rows) => {
-      res.redirect('/');
+      res.redirect('/f');
     });
   });
 }

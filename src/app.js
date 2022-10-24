@@ -41,13 +41,13 @@ app.use(myConnection(mysql, {
   host: 'localhost',
   user: 'root',
   password: '1234',
-  port: 3306,
+  port: 3307,
   database: 'USUARIOS'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
 
 // routes
-app.use('/a', customerRoutes);
+app.use('/f', customerRoutes);
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
