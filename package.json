@@ -16,7 +16,7 @@
   },
   "scripts": {
     "dev": "nodemon src/app.js",
-    "start": "nodemon src/index.html"
+    "start": "nodemon src/Index.html"
   },
   "keywords": [],
   "author": "",
