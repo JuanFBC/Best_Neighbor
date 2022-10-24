@@ -16,9 +16,10 @@
   },
   "scripts": {
     "dev": "nodemon src/app.js",
-    "start": "nodemon src/Index.html"
+    "start": "nodemon src/Index.pug"
   },
   "keywords": [],
   "author": "",
   "license": "ISC"
 }
+
