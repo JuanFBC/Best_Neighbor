@@ -436,8 +436,8 @@ body {
   }
   
   .main__tittle {
-    font-size: 25px;
-    color: #969696;
+    font-size: 50px;
+    color: #4f4e4e;
     margin: 20px 100px;
   }
   
@@ -545,7 +545,15 @@ body {
   justify-content: space-between;
     
   }
-
+  .like-table{
+    margin-top: 10px;
+    margin-right: 20px;
+    border: 3px solid #686d76; 
+  }
+  .like-table2{
+    margin-right: 20px;
+    border: 0.9px solid #686d76; 
+  }
   
   
   .like-tittle{
@@ -563,12 +571,17 @@ body {
   .Icon-image {
     height: 200px;
     margin-top: 50px;
-   
+    margin-bottom: 60px;
     border: 10px solid #686d76;
     border-radius: 360px;
   justify-content: space-between;
-    
-    cursor: pointer;
+ cursor: pointer;
+  }
+  .Icon-image2{
+    border: 10px solid #686d76;
+    border-radius: 50px;
+  justify-content: space-between;
+ cursor: pointer;
   }
 
   .delete-image {
