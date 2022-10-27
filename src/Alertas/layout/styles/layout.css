@@ -567,7 +567,7 @@ background-color:#839ce2;
   .like-taADMIN{
     background-color:#e2a983;
         margin-top: 50px;
-        margin-bottom: 300px;
+        margin-bottom: 500px;
         margin-right: 100px;
         border: 3px solid #845e3b; 
       }
@@ -575,7 +575,24 @@ background-color:#839ce2;
         margin-right: 40px;
         border: 3px solid #845e3b; 
       }
-      
+      .like-textbox{
+        width:19.8421%;
+        margin-left: 40px;
+        margin-bottom: 20px;
+      }
+      .like-textbox1{
+       font-size: large;
+       size: 20px;
+       margin-left: 40px;
+        margin-bottom: 20px;
+      }
+      .like-textbox2{
+        font-size: large;
+        height: 150px;
+        width: 450px;
+        margin-left: 40px;
+        margin-bottom: 30px;
+       }
   
   .like-image {
     height: 30px;
