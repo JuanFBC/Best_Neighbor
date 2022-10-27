@@ -140,7 +140,7 @@ File: Layout CSS
 .sidebar .sdb_holder{margin-bottom:50px;}
 .sidebar .sdb_holder:last-child{margin-bottom:0;}
 
-
+main
 /* Contact Details
 --------------------------------------------------------------------------------------------------------------- */
 #ctdetails{}
@@ -625,8 +625,9 @@ background-color: white;
   .main__tittle {
     font-size: 25px;
     color: #686d76;
-    margin: 20px 100px;
     margin-left: 500px;
+    margin-bottom: -20px;
+    margin-top: -40px;
   }
   
   .input {
@@ -729,7 +730,7 @@ background-color: white;
     border-radius: 8px;
   display: flex;
   justify-content: space-between;
-  margin-left: 300px;
+  margin-left: 200px;
     
   }
   
