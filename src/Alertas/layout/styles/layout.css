@@ -438,8 +438,9 @@ body {
   .main__tittle {
     font-size: 50px;
     color: #4f4e4e;
-    margin: 20px 100px;
+    margin: 20px 50px;
   }
+  
   
   .input {
     background-color: rgba(255, 255, 255, 0.5);
@@ -545,24 +546,36 @@ body {
   justify-content: space-between;
     
   }
-  .like-table{
-    background-color:#839ce2;
+  .like-taresidente{
+background-color:#839ce2;
+    margin-top: 50px;
+    margin-bottom: 300px;
+    margin-right: 100px;
+    border: 3px solid #3b5484; 
+  }
+  .like-taresidente2{
+    margin-right: 40px;
+    border: 3px solid #3b5484; 
+  }
+  
+  
+  .like-tittle{
+    color: #000000;
+    margin-left: 10px;
+    
+  }
+  .like-taADMIN{
+    background-color:#e2a983;
         margin-top: 50px;
         margin-bottom: 300px;
         margin-right: 100px;
-        border: 3px solid #3b5484; 
+        border: 3px solid #845e3b; 
       }
-      .like-table2{
+      .like-taADMIN2{
         margin-right: 40px;
-        border: 3px solid #3b5484; 
+        border: 3px solid #845e3b; 
       }
       
-      
-      .like-tittle{
-        color: #000000;
-        margin-left: 10px;
-        
-      }
   
   .like-image {
     height: 30px;
@@ -579,11 +592,8 @@ body {
   justify-content: space-between;
  cursor: pointer;
   }
-  .Icon-image2{
-    border: 10px solid #686d76;
-    border-radius: 50px;
-  justify-content: space-between;
- cursor: pointer;
+  .Icon-image1{
+margin-left: 10px;
   }
 
   .delete-image {
