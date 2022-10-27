@@ -26,7 +26,7 @@ app.use(myConnection(mysql, {
   host: 'localhost',
   user: 'root',
   password: '1234',
-  port: 3307,
+  port: 3306,
   database: 'USUARIOS'
 }, 'single'));
 app.use(express.urlencoded({extended: false}));
@@ -48,7 +48,7 @@ app.listen(app.get('port'), () => {
 //app.use(Inicio);
 
 
-
+/*
 
 app.get("/h", function(req, res){
   res.sendfile(__dirname + "/Index.html");    //aqui envias el HTML
@@ -68,3 +68,5 @@ app.get("/h", function(req, res){
   app.get("/webfonts/css/fontawesome-all.min.css", function(req, res){
     res.sendfile(__dirname + "/webfonts/css/fontawesome-all.min.css");    //aqui envias el HTML
   });
+
+  */
