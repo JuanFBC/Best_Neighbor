@@ -33,7 +33,7 @@ app.use(express.urlencoded({extended: false}));
 
 // routes
 //app.use('/a', customerRoutes);
-app.use('/a', customerRoutes);
+app.use('/', customerRoutes);
 
 // static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -50,7 +50,7 @@ app.listen(app.get('port'), () => {
 
 
 
-app.get("/", function(req, res){
+app.get("/h", function(req, res){
   res.sendfile(__dirname + "/Index.html");    //aqui envias el HTML
   });
   app.get("/backgrounds", function(req, res){
