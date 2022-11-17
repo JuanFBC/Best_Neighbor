@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!--
+Template Name: Chillaid
+Author: <a href="https://www.os-templates.com/">OS Templates</a>
+Author URI: https://www.os-templates.com/
+Copyright: OS-Templates.com
+Licence: Free to use under our free template licence terms
+Licence URI: https://www.os-templates.com/template-terms
+-->
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<title>Best Neighbor</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="/Pagos" rel="stylesheet" type="text/css" media="all">
+</head>
+<body id="top">
+
+
+  
+<div class="wrapper row1">
+  <header id="header" class="hoc clear">
+    <div id="logo" class="fl_left"> 
+
+      <h1 class="logoname"><a href="/">Best  Neighbor</a></h1>
+
+    </div>
+    <nav id="mainav" class="fl_right"> 
+
+      <ul class="clear">
+
+        </ul>
+        <!--<img  src="images/Usuarios/1.jpg"/>-->
+      <a href="#">Perfil</a>
+          <ul>
+
+    </nav>
+  </header>
+</div>
+
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+<section class="principal-container">
+  <section class="main">
+    <h2 class="main__tittle">Post</h2>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-7">
+      <table class="table table-bordered table-hover" >
+        <thead class="like-table">
+          <tr >
+            <td>n°</td>
+            <td>Nombre</td>
+            <td>Apellido</td>
+            <td>Correo electrónico</td>
+            <td>Número de elefono</td>
+            <td>Id Conjunto</td>
+            <td>Número de Torre</td>
+            <td>Número de Apartamento</td>
+          </tr>
+        </thead>
+        <tbody>
+          <% if (data) { %>
+            <% for(var i = 0; i < data.length; i++) { %>
+              <tr class="like-table2">
+                <td><%= (i + 1) %></td>
+                <td><%= data[i].nombre %></td>
+                <td><%= data[i].apellido %></td>
+                <td><%= data[i].correo %></td>
+                <td><%= data[i].telefono %></td>
+                <td><%= data[i].id_conjunto %></td>
+                <td><%= data[i].nro_torre %></td>
+                <td><%= data[i].nro_apartamento %></td>
+              </tr>
+            <% } %>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+
+</section>
+
+  <div class="clear"></div>
+</main>
+</div>
+
+<%- include('partials/_footer') %>
