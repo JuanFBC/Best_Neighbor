@@ -280,11 +280,11 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 /* Max Wrapper Width - Laptop, Desktop etc.
 --------------------------------------------------------------------------------------------------------------- */
 @media screen and (min-width:1140px){
-	.hoc{max-width:1140px;}
+	.hoc{max-width:1390px;}
 }
 
-@media screen and (min-width:978px) and (max-width:1140px){
-	.hoc{max-width:95%;}
+@media screen and (min-width:778px) and (max-width:1140px){
+	.hoc{max-width:40%;}
 }
 
 
@@ -546,14 +546,14 @@ body {
   justify-content: space-between;
     
   }
-  .like-taresidente{
+  .like-taresidente{ /* Parte superior tablas Residente*/
 background-color:#839ce2;
     margin-top: 50px;
     margin-bottom: 300px;
     margin-right: 100px;
     border: 3px solid #3b5484; 
   }
-  .like-taresidente2{
+  .like-taresidente2{ /* Contenido de las tablas Residente*/
     margin-right: 40px;
     border: 3px solid #3b5484; 
   }
@@ -564,16 +564,43 @@ background-color:#839ce2;
     margin-left: 10px;
     
   }
-  .like-taADMIN{
+  .like-taADMIN{ /* Parte superior de la tabla*/
     background-color:#e2a983;
-        margin-top: 50px;
+    font-size: 30%;
+        margin-top: 10px;
         margin-bottom: 500px;
         margin-right: 100px;
         border: 3px solid #845e3b; 
       }
-      .like-taADMIN2{
+      .like-taADMIN2{ /* Contenidos de la tabla*/
         margin-right: 40px;
         border: 3px solid #845e3b; 
+      }
+      .like-taADMINesp{ /* Casillas de entrada*/
+      
+        margin-top: 30px;
+        width: 400px;
+        height: 50px;
+        
+        margin-right: -40px;
+        border: 1px solid #edaa6b; 
+      }
+      .like-taADMIN3{ /* Casillas de entrada (CRUD)*/
+        margin-top: 10px;
+        width: 400px;
+        height: 50px;
+       
+        margin-right: -40px;
+        border: 1px solid #edaa6b; 
+      }
+      .like-taADMINBott{ /* Boton (CRUD)*/
+        margin-top: 10px;
+        margin-bottom: 40px;
+        font-size: large;
+        width: 200px;
+        height: 40px;
+        border: 1px solid #edaa6b; 
+        background-color:#e2a983;
       }
       .like-textbox{
         width:19.8421%;
