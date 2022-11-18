@@ -13,18 +13,7 @@ controller.list = (req, res) => {
   });
 };
 
-controller.list2 = (req, res) => {
-  req.getConnection((err, conn) => {
-    conn.query('SELECT * FROM residente', (err, residentes) => {
-     if (err) {
-      res.json(err);
-     }
-     res.render('residentes copy', {
-        data: residentes
-     });
-    });
-  });
-};
+
 
 controller.save = (req, res) => {
   const data = req.body;
@@ -68,4 +57,72 @@ controller.delete = (req, res) => {
   });
 }
 
+/* <Control Tablas Alertas--------------------------------------------------------------------------------------------------------------------> */
+
+controller.listALERTAS = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM ALERTAS', (err, residentes) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('Alertas_Res', {
+        data: residentes
+     });
+    });
+  });
+};
+controller.listALERTASCRUD = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM ALERTAS', (err, residentes) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('Alertas_ADM', {
+        data: residentes
+     });
+    });
+  });
+};
+
+controller.saveALERTAS = (req, res) => {
+  const data = req.body;
+  console.log(req.body)
+  req.getConnection((err, connection) => {
+    const query = connection.query('INSERT INTO ALERTAS set ?', data, (err, residente) => {
+      console.log(residente)
+      res.redirect('/AlertasCRUD');
+    })
+  })
+};
+
+controller.editALERTAS = (req, res) => {
+  const { id } = req.params;
+  req.getConnection((err, conn) => {
+    conn.query("SELECT * FROM ALERTAS WHERE id = ?", [id], (err, rows) => {
+      res.render('customers_edit', {
+        data: rows[0]
+      })
+    });
+  });
+};
+
+controller.updateALERTAS = (req, res) => {
+  const { id } = req.params;
+  const newresidente = req.body;
+  req.getConnection((err, conn) => {
+
+  conn.query('UPDATE ALERTAS set ? where id = ?', [newresidente, id], (err, rows) => {
+    res.redirect('/AlertasCRUD');
+  });
+  });
+};
+
+controller.deleteALERTAS = (req, res) => {
+  const { id } = req.params;
+  req.getConnection((err, connection) => {
+    connection.query('DELETE FROM ALERTAS WHERE id = ?', [id], (err, rows) => {
+      res.redirect('/AlertasCRUD');
+    });
+  });
+}
 module.exports = controller;

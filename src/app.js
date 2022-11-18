@@ -48,14 +48,9 @@ app.get("/framework.css", function(req, res){
   res.sendfile(__dirname + "/Inicio/framework.css");    //aqui envias el HTML
 });
 
-app.get("/webfonts/css/fontawesome-all.min.css", function(req, res){
+app.get("/webfonts", function(req, res){
   res.sendfile(__dirname + "/webfonts/css/fontawesome-all.min.css");    //aqui envias el HTML
 });
-
-app.get("/webfonts/css/fontawesome-all.min.css", function(req, res){
-  res.sendfile(__dirname + "/webfonts/css/fontawesome-all.min.css");    //aqui envias el HTML
-});
-
 
 app.get("/EstilosTablas", function(req, res){
   res.sendfile(__dirname + "/Alertas/layout/styles/layout.css");    //aqui envias el HTML

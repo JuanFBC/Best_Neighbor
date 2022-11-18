@@ -13,7 +13,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <title>Best Neighbor</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="/Pagos" rel="stylesheet" type="text/css" media="all">
+<link href="/EstilosTablas" rel="stylesheet" type="text/css" media="all">
 </head>
 <body id="top">
 
@@ -43,35 +43,33 @@ Licence URI: https://www.os-templates.com/template-terms
   <main class="hoc container clear"> 
 <section class="principal-container">
   <section class="main">
-    <h2 class="main__tittle">Post</h2>
+    <h2 class="main__tittle">Alertas</h2>
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-7">
       <table class="table table-bordered table-hover" >
-        <thead class=".like-taADMIN">
+        <thead class="like-taresidente">
           <tr >
-            <td>n°</td>
-            <td>Nombre</td>
-            <td>Apellido</td>
-            <td>Correo electrónico</td>
-            <td>Número de elefono</td>
-            <td>Id Conjunto</td>
-            <td>Número de Torre</td>
-            <td>Número de Apartamento</td>
+            <td><h3>n°</td>
+            <td><h3>Tipo</td>
+            <td><h3>Descripcion</td>
           </tr>
         </thead>
         <tbody>
           <% if (data) { %>
             <% for(var i = 0; i < data.length; i++) { %>
-              <tr class=".like-taADMIN2">
-                <td><%= (i + 1) %></td>
-                <td><%= data[i].nombre %></td>
-                <td><%= data[i].apellido %></td>
-                <td><%= data[i].correo %></td>
-                <td><%= data[i].telefono %></td>
-                <td><%= data[i].id_conjunto %></td>
-                <td><%= data[i].nro_torre %></td>
-                <td><%= data[i].nro_apartamento %></td>
+              <tr class="like-taresidente2">
+                <td><h3><%= (i + 1) %></td>
+                  <td><h3><%= data[i].TITULO %></td>
+                  <td>
+                    <h3>
+                      <%= data[i].TIPO %>
+                      <nav>
+                        <%= data[i].DESCRIPCION %>
+                      </nav>
+                    </h3>
+                  </td>
+                </td>
               </tr>
             <% } %>
           <% } %>

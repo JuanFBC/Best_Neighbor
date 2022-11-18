@@ -45,32 +45,28 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper row3">
   <main class="hoc container clear"> 
 <section class="principal-container">
+
   <section class="main">
-    <center><h2 class="main__tittle">Administrar usuarios</h2></center>
+    <center><h2 class="main__tittle">Creacion de alertas</h2></center>
 <div >
   <div class="row">
     <div class="col-md-5">
       <div>
-        <form action="/add" method="POST">
-            <input type="text" name="nombre" placeholder="Nombre" class="like-taADMINesp" autofocus>
-            <input type="text" name="apellido" placeholder="Apellido" class="like-taADMIN3" autofocus>
-          <div class="form-group">
-            <input type="text" name="correo" placeholder="Correo electrónico" class="like-taADMIN3" autofocus>
+        <form action="/addAlertas" method="POST">
+          <div>
+            <input type="text" name="TITULO" placeholder="Titulo" class="like-taADMINesp" autofocus > 
+          </div>
+          <div>
+            <input type="text" name="TIPO" placeholder="Tipo" class="like-taADMIN3" autofocus>
           </div>
           <div class="form-group">
-            <input type="text" name="telefono" placeholder="Número de elefono" class="like-taADMIN3" autofocus>
+            <input type="text" name="ID_USUARIO" placeholder="Ususario" class="like-taADMIN3" autofocus>
           </div>
           <div class="form-group">
-            <input type="text" name="id_conjunto" placeholder="Id Conjunto" class="like-taADMIN3" autofocus>
-          </div>
-          <div class="form-group">
-            <input type="text" name="nro_torre" placeholder="Número de Torre" class="like-taADMIN3" autofocus>
-          </div>
-          <div class="form-group">
-            <input type="text" name="nro_apartamento" placeholder="Número de Apartamento" class="like-taADMIN3" autofocus>
+            <input type="text" name="DESCRIPCION" placeholder="Descripcion" class="like-taADMIN3" autofocus>
           </div>
           <button type="submit" class="like-taADMINBott">
-            <h3>save customer</h3>
+            <h3>Crear Alerta</h3>
           </button>
         </form>
       </div>
@@ -78,15 +74,11 @@ Licence URI: https://www.os-templates.com/template-terms
       <table class="table table-bordered table-hover">
         <thead class="like-taADMIN">
           <tr>
-            <td><h3>n°</h3></td>
-            <td><h3>Nombre</td>
-            <td><h3>Apellido</td>
-            <td><h3>Correo electrónico</td>
-            <td><h3>Número de elefono</td>
-            <td><h3>Id Conjunto</td>
-            <td><h3>Número de Torre</td>
-            <td><h3>Número de Apartamento</td>
-            <td><h3>Actions</td>
+            <td><h3>n°</td>
+              <td><h3>ID ususario</td>
+              <td><h3>Tipo</td>
+              <td><h3>Descripcion</td>
+                <td><h3>Accion</td>
           </tr>
         </thead>
         <tbody >
@@ -94,16 +86,19 @@ Licence URI: https://www.os-templates.com/template-terms
             <% for(var i = 0; i < data.length; i++) { %>
               <tr class="like-taADMIN2">
                 <td><h3><%= (i + 1) %></td>
-                <td><h3><%= data[i].nombre %></td>
-                <td><h3><%= data[i].apellido %></td>
-                <td><h3><%= data[i].correo %></td>
-                <td><h3><%= data[i].telefono %></td>
-                <td><h3><%= data[i].id_conjunto %></td>
-                <td><h3><%= data[i].nro_torre %></td>
-                <td><h3><%= data[i].nro_apartamento %></td>
+                  <td><h3><%= data[i].ID_USUARIO %></td>
+                  <td><h3><%= data[i].TITULO %></td>
+                  <td>
+                    <h3>
+                      <%= data[i].TIPO %>
+                      <nav>
+                        <%= data[i].DESCRIPCION %>
+                      </nav>
+                    </h3>
+                  </td>
                 <td>
-                  <a href="/update/<%= data[i].id %>" class="btn btn-info">Edit</a>
-                  <a href="/delete/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+                  <a href="/updateALERTAS/<%= data[i].id %>" class="btn btn-info">Edit</a>
+                  <a href="/deleteALERTAS/<%= data[i].id %>" class="btn btn-danger">Delete</a>
                 </td>
               </tr>
             <% } %>

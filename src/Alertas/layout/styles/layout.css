@@ -558,7 +558,10 @@ background-color:#839ce2;
     border: 3px solid #3b5484; 
   }
   
-  
+  .imagen{
+    height: 90px;
+    width: 70px;
+  }
   .like-tittle{
     color: #000000;
     margin-left: 10px;
