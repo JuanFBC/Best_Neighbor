@@ -284,7 +284,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#97A9BD !important;}
 }
 
 @media screen and (min-width:778px) and (max-width:1140px){
-	.hoc{max-width:40%;}
+	.hoc{max-width:90%;}
 }
 
 
@@ -596,10 +596,9 @@ background-color:#839ce2;
       .like-taADMINBott{ /* Boton (CRUD)*/
         margin-top: 10px;
         margin-bottom: 40px;
-        font-size: large;
         width: 200px;
         height: 40px;
-        border: 1px solid #edaa6b; 
+        border: 6px solid #edaa6b; 
         background-color:#e2a983;
       }
       .like-textbox{
