@@ -125,4 +125,73 @@ controller.deleteALERTAS = (req, res) => {
     });
   });
 }
+
+/* <Control Tablas Pagos--------------------------------------------------------------------------------------------------------------------> */
+
+controller.listPAGOS = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM PAGOS', (err, residentes) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('Pagos_RES', {
+        data: residentes
+     });
+    });
+  });
+};
+controller.listPAGOSCRUD = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM PAGOS', (err, residentes) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('Alertas_ADM', {
+        data: residentes
+     });
+    });
+  });
+};
+
+controller.savePAGOS = (req, res) => {
+  const data = req.body;
+  console.log(req.body)
+  req.getConnection((err, connection) => {
+    const query = connection.query('INSERT INTO PAGOS set ?', data, (err, residente) => {
+      console.log(residente)
+      res.redirect('/AlertasCRUD');
+    })
+  })
+};
+
+controller.editPAGOS = (req, res) => {
+  const { id } = req.params;
+  req.getConnection((err, conn) => {
+    conn.query("SELECT * FROM PAGOS WHERE id = ?", [id], (err, rows) => {
+      res.render('customers_edit', {
+        data: rows[0]
+      })
+    });
+  });
+};
+
+controller.updatePAGOS = (req, res) => {
+  const { id } = req.params;
+  const newresidente = req.body;
+  req.getConnection((err, conn) => {
+
+  conn.query('UPDATE PAGOS set ? where id = ?', [newresidente, id], (err, rows) => {
+    res.redirect('/AlertasCRUD');
+  });
+  });
+};
+
+controller.deletePAGOS = (req, res) => {
+  const { id } = req.params;
+  req.getConnection((err, connection) => {
+    connection.query('DELETE FROM PAGOS WHERE id = ?', [id], (err, rows) => {
+      res.redirect('/AlertasCRUD');
+    });
+  });
+}
 module.exports = controller;

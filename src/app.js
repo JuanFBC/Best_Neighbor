@@ -36,22 +36,5 @@ app.listen(app.get('port'), () => {
   console.log(`server on port ${app.get('port')}`);
 });
 
-app.get("/backgrounds", function(req, res){
-  res.sendfile(__dirname + "/backgrounds/03.png");    //aqui envias el HTML
-});
 
-app.get("/Inicio", function(req, res){
-  res.sendfile("./src/Inicio/layout.css");    //aqui envias el HTML
-});
 
-app.get("/framework.css", function(req, res){
-  res.sendfile(__dirname + "/Inicio/framework.css");    //aqui envias el HTML
-});
-
-app.get("/webfonts", function(req, res){
-  res.sendfile(__dirname + "/webfonts/css/fontawesome-all.min.css");    //aqui envias el HTML
-});
-
-app.get("/EstilosTablas", function(req, res){
-  res.sendfile(__dirname + "/Alertas/layout/styles/layout.css");    //aqui envias el HTML
-});
