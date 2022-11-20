@@ -34,7 +34,7 @@ router.get("/Inicio", function(req, res){
         res.sendfile("./src/Inicio/layout.css");    //aqui envias el HTML
       });
      router.get("/backgrounds", function(req, res){
-        res.sendfile("../backgrounds/03.png");    //aqui envias el HTML
+        res.sendfile("./src/backgrounds/03.png");    //aqui envias el HTML
       });
             
      router.get("/framework.css", function(req, res){
@@ -59,6 +59,18 @@ router.get("/Inicio", function(req, res){
 
       router.get("/Luz", function(req, res){
         res.sendfile("./src/Pagos/images/Usuarios/2.png");    //aqui envias el HTML
+      });
+
+      router.get("/webfonts/fa-solid-900.ttf", function(req, res){
+        res.sendfile("./src/webfonts/webfonts/fa-solid-900.ttf");    //aqui envias el HTML
+      });
+
+      router.get("/webfonts/fa-solid-900.woff", function(req, res){
+        res.sendfile("./src/webfonts/webfonts/fa-solid-900.woff");    //aqui envias el HTML
+      });
+
+      router.get("/webfonts/fa-solid-900.woff2", function(req, res){
+        res.sendfile("./src/webfonts/webfonts/fa-solid-900.woff2");    //aqui envias el HTML
       });
 module.exports = router;
 
