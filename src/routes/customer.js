@@ -25,30 +25,50 @@ router.post('/updateAlertas/:id', customerController.updatePAGOS);
 router.get('/Borrar/:id', customerController.deletePAGOS);
 
 
-
+/*Ruta Index------------------------------------------------------- */
 router.get("/", function(req, res){
     res.sendFile(__dirname + "/Index.html");    //aqui envias el HTML
     });
 
-router.get("/Inicio", function(req, res){
-        res.sendfile("./src/Inicio/layout.css");    //aqui envias el HTML
+
+      /*Ruta Estilos------------------------------------------------------- */
+      router.get("/Inicio", function(req, res){
+        res.sendfile("./src/Inicio/layout.css");    //INICIO
       });
      router.get("/backgrounds", function(req, res){
-        res.sendfile("./src/backgrounds/03.png");    //aqui envias el HTML
+        res.sendfile("./src/backgrounds/03.png");    //FONDO
       });
             
      router.get("/framework.css", function(req, res){
-        res.sendfile("./src/Inicio/framework.css");    //aqui envias el HTML
+        res.sendfile("./src/Inicio/framework.css");    //INICIO
+      });
+
+      router.get("/EstilosADM", function(req, res){
+        res.sendfile("./src/Estilos_Admin/layout.css");    //INICIO
+      });
+
+      router.get("/EstilosRESLOG", function(req, res){
+        res.sendfile("./src/Estilos_Res/estilos.css");    //ADMIN
+      });
+
+      router.get("/EstilosRES", function(req, res){
+        res.sendfile("./src/Estilos_Res/layout.css");    //INICIO
+      });
+
+      router.get("/EstilosADMLOG", function(req, res){
+        res.sendfile("./src/Estilos_Admin/estilos.css");    //ADMIN
       });
       
       router.get("/webfonts", function(req, res){
-        res.sendfile("./src/webfonts/css/fontawesome-all.min.css");    //aqui envias el HTML
+        res.sendfile("./src/webfonts/css/fontawesome-all.min.css");    //ICONOS
       });
       
       router.get("/EstilosTablas", function(req, res){
-        res.sendfile("./src/Alertas/layout/styles/layout.css");    //aqui envias el HTML
+        res.sendfile("./src/Alertas/layout/styles/layout.css");    //TABLAS
       });
 
+
+      /*IMAGENES------------------------------------------------------- */
       router.get("/Agua", function(req, res){
         res.sendfile("./src/Pagos/images/Usuarios/1.png");    //aqui envias el HTML
       });
@@ -61,6 +81,8 @@ router.get("/Inicio", function(req, res){
         res.sendfile("./src/Pagos/images/Usuarios/2.png");    //aqui envias el HTML
       });
 
+
+      /*ICONOS------------------------------------------------------- */
       router.get("/webfonts/fa-solid-900.ttf", function(req, res){
         res.sendfile("./src/webfonts/webfonts/fa-solid-900.ttf");    //aqui envias el HTML
       });
@@ -72,5 +94,38 @@ router.get("/Inicio", function(req, res){
       router.get("/webfonts/fa-solid-900.woff2", function(req, res){
         res.sendfile("./src/webfonts/webfonts/fa-solid-900.woff2");    //aqui envias el HTML
       });
+
+      /*RUTAS INICIO------------------------------------------------------- */
+
+      router.get("/ADMIN", function(req, res){
+        res.sendfile("./src/Administrador/Login_Admin.html");    //aqui envias el HTML
+      });
+
+      router.get("/RES", function(req, res){
+        res.sendfile("./src/Residente/loginRes.html");    //aqui envias el HTML
+      });
+
+      
+      /*RUTAS SCRIP------------------------------------------------------ */
+
+
+      router.get("/LOGADM", function(req, res){
+        res.sendfile("./src/Administrador/index_Admin.js");    //aqui envias el HTML
+      });
+
+      router.get("/LOGRES", function(req, res){
+        res.sendfile("./src/Residente/index_Res.js");    //aqui envias el HTML
+      });
+
+      /*RUTAS LOGINS------------------------------------------------------ */
+
+      router.get("/INICIOADM", function(req, res){
+        res.sendfile("./src/Administrador/Inicio_Admin.html");    //aqui envias el HTML
+      });
+
+      router.get("/INICIORES", function(req, res){
+        res.sendfile("./src/Residente/Inicio_Res.html");    //aqui envias el HTML
+      });
+
 module.exports = router;
 

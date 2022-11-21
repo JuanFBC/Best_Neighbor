@@ -146,7 +146,7 @@ controller.listPAGOSCRUD = (req, res) => {
      if (err) {
       res.json(err);
      }
-     res.render('Alertas_ADM', {
+     res.render('Pagos_ADM', {
         data: residentes
      });
     });

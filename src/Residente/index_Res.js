@@ -33,7 +33,7 @@ function login() {
             sessionStorage.setItem('nombre', usuarioAValidar[0].nombre);
 
             console.log(usuarioAValidar);
-            window.location = "Inicio_Res.html";
+            window.location = "/INICIORES";
         } else {
             window.alert("Contraseña incorrecta");
         }
