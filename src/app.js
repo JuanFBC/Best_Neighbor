@@ -8,6 +8,7 @@ const app = express();
 
 // importing routes
 const customerRoutes = require('./routes/customer');
+const customerController = require('./controllers/customerController');
 
 // settings
 app.set('port', process.env.PORT || 3000);

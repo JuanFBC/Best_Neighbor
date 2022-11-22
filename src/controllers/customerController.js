@@ -61,24 +61,24 @@ controller.delete = (req, res) => {
 
 controller.listALERTAS = (req, res) => {
   req.getConnection((err, conn) => {
-    conn.query('SELECT * FROM ALERTAS', (err, residentes) => {
+    conn.query('SELECT * FROM ALERTAS', (err, Alertas) => {
      if (err) {
       res.json(err);
      }
      res.render('Alertas_Res', {
-        data: residentes
+        data: Alertas
      });
     });
   });
 };
 controller.listALERTASCRUD = (req, res) => {
   req.getConnection((err, conn) => {
-    conn.query('SELECT * FROM ALERTAS', (err, residentes) => {
+    conn.query('SELECT * FROM ALERTAS', (err, Alertas) => {
      if (err) {
       res.json(err);
      }
      res.render('Alertas_ADM', {
-        data: residentes
+        data: Alertas
      });
     });
   });
@@ -88,17 +88,17 @@ controller.saveALERTAS = (req, res) => {
   const data = req.body;
   console.log(req.body)
   req.getConnection((err, connection) => {
-    const query = connection.query('INSERT INTO ALERTAS set ?', data, (err, residente) => {
-      console.log(residente)
+    const query = connection.query('INSERT INTO ALERTAS set ?', data, (err, Alertas) => {
+      console.log(Alertas)
       res.redirect('/AlertasCRUD');
     })
   })
 };
 
 controller.editALERTAS = (req, res) => {
-  const { id } = req.params;
+  const { ID } = req.params;
   req.getConnection((err, conn) => {
-    conn.query("SELECT * FROM ALERTAS WHERE id = ?", [id], (err, rows) => {
+    conn.query("SELECT * FROM ALERTAS WHERE ID = ?", [ID], (err, rows) => {
       res.render('customers_edit', {
         data: rows[0]
       })
@@ -107,20 +107,20 @@ controller.editALERTAS = (req, res) => {
 };
 
 controller.updateALERTAS = (req, res) => {
-  const { id } = req.params;
+  const { ID } = req.params;
   const newresidente = req.body;
   req.getConnection((err, conn) => {
 
-  conn.query('UPDATE ALERTAS set ? where id = ?', [newresidente, id], (err, rows) => {
+  conn.query('UPDATE ALERTAS set ? where ID = ?', [newresidente, ID], (err, rows) => {
     res.redirect('/AlertasCRUD');
   });
   });
 };
 
 controller.deleteALERTAS = (req, res) => {
-  const { id } = req.params;
+  const { ID } = req.params;
   req.getConnection((err, connection) => {
-    connection.query('DELETE FROM ALERTAS WHERE id = ?', [id], (err, rows) => {
+    connection.query('DELETE FROM ALERTAS WHERE ID = ?', [ID], (err, rows) => {
       res.redirect('/AlertasCRUD');
     });
   });
@@ -165,9 +165,9 @@ controller.savePAGOS = (req, res) => {
 };
 
 controller.editPAGOS = (req, res) => {
-  const { id } = req.params;
+  const { AD } = req.params;
   req.getConnection((err, conn) => {
-    conn.query("SELECT * FROM PAGOS WHERE id = ?", [id], (err, rows) => {
+    conn.query("SELECT * FROM PAGOS WHERE id = ?", [AD], (err, rows) => {
       res.render('customers_edit', {
         data: rows[0]
       })
@@ -176,21 +176,21 @@ controller.editPAGOS = (req, res) => {
 };
 
 controller.updatePAGOS = (req, res) => {
-  const { id } = req.params;
+  const { AD } = req.params;
   const newresidente = req.body;
   req.getConnection((err, conn) => {
 
-  conn.query('UPDATE PAGOS set ? where id = ?', [newresidente, id], (err, rows) => {
-    res.redirect('/AlertasCRUD');
+  conn.query('UPDATE PAGOS set ? where id = ?', [newresidente, AD], (err, rows) => {
+    res.redirect('/PagosCRUD');
   });
   });
 };
 
 controller.deletePAGOS = (req, res) => {
-  const { id } = req.params;
+  const { AD } = req.params;
   req.getConnection((err, connection) => {
-    connection.query('DELETE FROM PAGOS WHERE id = ?', [id], (err, rows) => {
-      res.redirect('/AlertasCRUD');
+    connection.query('DELETE FROM PAGOS WHERE id = ?', [AD], (err, rows) => {
+      res.redirect('/PagosCRUD');
     });
   });
 }
