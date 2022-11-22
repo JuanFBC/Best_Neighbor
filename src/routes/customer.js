@@ -106,7 +106,7 @@ router.get("/", function(req, res){
       });
 
       
-      /*RUTAS SCRIP------------------------------------------------------ */
+      /*RUTAS SCRIPT------------------------------------------------------ */
 
 
       router.get("/LOGADM", function(req, res){
@@ -126,6 +126,15 @@ router.get("/", function(req, res){
       router.get("/INICIORES", function(req, res){
         res.sendfile("./src/Residente/Inicio_Res.html");    //aqui envias el HTML
       });
+
+
+      /*RUTAS REGISTRO ADMIN------------------------------------------------------ */
+
+      router.get("/INICIOADM", function(req, res){
+        res.sendfile("./src/Administrador/Register_Admin.html");    //aqui envias el HTML
+      });
+
+
 
 module.exports = router;
 
