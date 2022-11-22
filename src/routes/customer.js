@@ -130,7 +130,7 @@ router.get("/", function(req, res){
 
       /*RUTAS REGISTRO ADMIN------------------------------------------------------ */
 
-      router.get("/INICIOADM", function(req, res){
+      router.get("/RegisADM", function(req, res){
         res.sendfile("./src/Administrador/Register_Admin.html");    //aqui envias el HTML
       });
 
