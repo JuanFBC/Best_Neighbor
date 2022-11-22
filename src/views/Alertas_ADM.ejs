@@ -85,20 +85,20 @@ Licence URI: https://www.os-templates.com/template-terms
           <% if (data) { %>
             <% for(var i = 0; i < data.length; i++) { %>
               <tr class="like-taADMIN2">
-                <td><h3><%= (i + 1) %></td>
+                <td><h3><%=data[i].ID %></td>
                   <td><h3><%= data[i].ID_USUARIO %></td>
                   <td><h3><%= data[i].TITULO %></td>
                   <td>
                     <h3>
-                      <%= data[i].TIPO %>
+                      <%= data[i].TIPO %>                      
                       <nav>
                         <%= data[i].DESCRIPCION %>
                       </nav>
                     </h3>
                   </td>
                 <td>
-                  <a href="/updateAlertas/<%= data[i].id %>" class="btn btn-info">Edit</a>
-                  <a href="/BorrarAlertas/<%= data[i].id %>" class="btn btn-danger">Delete</a>
+                  <a href="/updateAlertas/<%= data[i].ID %>" class="btn btn-info">Edit</a>
+                  <a href="/BorrarAlertas/<%= data[i].ID %>" class="btn btn-danger">Delete</a>
                 </td>
               </tr>
             <% } %>

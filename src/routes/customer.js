@@ -9,20 +9,20 @@ router.post('/update/:id', customerController.update);
 router.get('/delete/:id', customerController.delete);
 
 /*CRUD ALERTAS------------------------------------------------------- */
-router.get('/Alertas', customerController.listALERTAS);
+router.get('/Alertas', customerController.listALERTASCRUD);
 router.get('/AlertasCRUD', customerController.listALERTASCRUD);
 router.post('/addAlertas', customerController.saveALERTAS);
-router.get('/ActualizarAlertas/:id', customerController.editALERTAS);
-router.post('/updateAlertas/:id', customerController.updateALERTAS);
-router.get('/BorrarAlertas/:id', customerController.deleteALERTAS);
+router.get('/ActualizarAlertas/:ID', customerController.editALERTAS);
+router.post('/updateAlertas/:ID', customerController.updateALERTAS);
+router.get('/BorrarAlertas/:ID', customerController.deleteALERTAS);
 
 /*CRUD PAGOS------------------------------------------------------- */
 router.get('/pagos', customerController.listPAGOS);
 router.get('/PagosCRUD', customerController.listPAGOSCRUD);
 router.post('/addpagos', customerController.savePAGOS);
-router.get('/Actualizar/:id', customerController.editPAGOS);
-router.post('/updateAlertas/:id', customerController.updatePAGOS);
-router.get('/Borrar/:id', customerController.deletePAGOS);
+router.get('/Actualizar/:ID', customerController.editPAGOS);
+router.post('/updateAlertas/:ID', customerController.updatePAGOS);
+router.get('/BorrarPagos/:ID', customerController.deletePAGOS);
 
 
 /*Ruta Index------------------------------------------------------- */
