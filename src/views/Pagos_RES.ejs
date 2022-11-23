@@ -32,7 +32,7 @@
     <section class="principal-container">
       <section class="main">
           <h2 class="main__tittle">Pagos Principales</h2>
-<center>
+<!-- <center>
         </ul class="Icon-image">
         <ul class="nospace group btmspace -80 elements elements-four">
         </li>
@@ -53,7 +53,7 @@
               </div>  
         </li> 
         </ul>
-<center>
+<center> -->
 
   <div class="container mt-5">
     <div class="row">
@@ -70,18 +70,17 @@
             <% if (data) { %>
               <% for(var i = 0; i < data.length; i++) { %>
                 <tr class="like-taresidente2">
-                  <td><h3><%= (i + 1) %></td>
-                    <td><h3><%= data[i].TIPOS %></td>
-                    <td>
-                      <h3>
-                        <%= data[i].Titulo %>
-                        <nav>
-                          <%= data[i].Descrip %>
-                        </nav>
-                      </h3>
-                    </td>
+                <td><h3><%= (i + 1) %></td>
+                  <td><h3><%= data[i].TIPO %></td>
+                  <td>
+                    <h3>
+                      <%= data[i].TITULO %>
+                      <nav>
+                        <%= data[i].DESCRIPCION %>
+                      </nav>
+                    </h3>
                   </td>
-                </tr>
+              </tr>
               <% } %>
             <% } %>
           </tbody>

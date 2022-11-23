@@ -17,17 +17,6 @@ var user2 = {
 var usuarios = [user1, user2];
 var usuarioAValidar = [];
 
-function log(){
-    user = document.getElementById("correo").value;
-    pass = document.getElementById("contraseña").value;
-
-    if (1 == 12345 ){
-        window.alert("Contraseña incorrecta");
-    }
-    else{ 
-        window.alert("Contraseña no incorrecta");}
-}
-
 function login() {
     var user, pass;
 

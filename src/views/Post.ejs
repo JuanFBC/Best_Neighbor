@@ -45,24 +45,28 @@
                   <h2>Crear Post!</h2>
                 </button ></center>
               </a>
-                <tbody >
-                  <% if (data) { %>
-                    <% for(var i = 0; i < data.length; i++) { %>
-                      <tr class="">
-                        <div id="1" class="video">
-                            <div<p class="like-tittle">
-                                    <%= data[i].TITULO %>
-                                    <%= data[i].DESCRIPCION %>   
-                                </p> id="like-1" class="like-container">
-                                
-                                <img class="like-image" id="like-image1"
-                                src ="/com"/>
-                            </div>
-                         </div>
-                      </tr>
-                    <% } %>
+
+              
+              <tbody >
+                <% if (data) { %>
+                  <% for(var i = 0; i < data.length; i++) { %>
+                    <tr class="">
+                      <div id="1" class="video">
+                          <div id="like-1" class="like-container">
+                            <p class="like-tittle">
+                              <%= data[i].TITULO %>
+                              <%= data[i].DESCRIPCION %>   
+                          </p>
+                            <img class="like-image" id="like-image1"
+                              src ="/com"/>
+                          </div>
+                          
+                          
+                       </div>
+                    </tr>
                   <% } %>
-                </tbody>
+                <% } %>
+              </tbody>
               </table>
         </section>
 
