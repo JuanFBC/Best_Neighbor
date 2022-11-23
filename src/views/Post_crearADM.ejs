@@ -39,73 +39,35 @@ Licence URI: https://www.os-templates.com/template-terms
   </header>
 </div>
 
-
-
-
 <div class="wrapper row3">
   <main class="hoc container clear"> 
 <section class="principal-container">
-
   <section class="main">
-    <center><h2 class="main__tittle">Creacion de Pagos</h2> </center>
+    <center><h2 class="main__tittle">Crear mis post</h2> </center>
 <div >
   <div class="row">
     <div class="col-md-5">
-      <div  style="margin-left: 50px; margin-bottom: 80px; margin-top: 70px;">
-        <form action="/addpagos" method="POST">
+      <center>      <div  style=" margin-bottom: 80px; margin-top: 70px;">
+        <form action="/addpostADM" method="POST">
           <div>
             <input type="text" name="TITULO" placeholder="Titulo" class="like-taADMIN3" autofocus > 
-          </div>
-          <div>
-            <input type="text" name="TIPO" placeholder="Tipo" class="like-taADMIN3" autofocus>
-          </div>
-          <div class="form-group">
-            <input type="text" name="ID_USUARIO" placeholder="Ususario" class="like-taADMIN3" autofocus>
           </div>
           <div class="form-group">
             <input type="text" name="DESCRIPCION" placeholder="Descripcion" class="like-taADMIN3" autofocus>
           </div>
           <button type="submit" class="like-taADMINBott">
-            <h3>Crear Alerta</h3>
+            <h3>Crear post</h3>
           </button>
+        
         </form>
       </div>
-    </div>
-      <table class="table table-bordered table-hover">
-        <thead class="like-taADMIN">
-          <tr>
-            <td><h3>n°</td>
-              <td><h3>ID ususario</td>
-              <td><h3>Tipo</td>
-              <td><h3>Descripcion</td>
-                <td><h3>Accion</td>
-          </tr>
-        </thead>
-        <tbody >
-          <% if (data) { %>
-            <% for(var i = 0; i < data.length; i++) { %>
-              <tr class="like-taADMIN2">
-                <td><h3><%= (i + 1) %></td>
-                  <td><h3><%= data[i].ID_USUARIO %></td>
-                  <td><h3><%= data[i].TIPO %></td>
-                  <td>
-                    <h3>
-                      <%= data[i].TITULO %>
-                      <nav>
-                        <%= data[i].DESCRIPCION %>
-                      </nav>
-                    </h3>
-                  </td>
-                <td>
-                  <a href="/updatePagos/<%= data[i].ID %>" class="btn btn-info">Edit</a>
-                  <a href="/BorrarPagos/<%= data[i].ID%>" class="btn btn-danger">Delete</a>
-                </td>
-              </tr>
-            <% } %>
-          <% } %>
-        </tbody>
-      </table>
-  </div>
+    </center>
+
+
+</section>
+
+  <div class="clear"></div>
+</main>
 </div>
 
 <%- include('partials/_footer') %>

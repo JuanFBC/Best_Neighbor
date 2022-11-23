@@ -153,21 +153,23 @@ controller.listPAGOSCRUD = (req, res) => {
   });
 };
 
+
+
 controller.savePAGOS = (req, res) => {
   const data = req.body;
   console.log(req.body)
   req.getConnection((err, connection) => {
     const query = connection.query('INSERT INTO PAGOS set ?', data, (err, residente) => {
       console.log(residente)
-      res.redirect('/AlertasCRUD');
+      res.redirect('/PagosCRUD');
     })
   })
 };
 
 controller.editPAGOS = (req, res) => {
-  const { AD } = req.params;
+  const { ID } = req.params;
   req.getConnection((err, conn) => {
-    conn.query("SELECT * FROM PAGOS WHERE id = ?", [AD], (err, rows) => {
+    conn.query("SELECT * FROM PAGOS WHERE id = ?", [ID], (err, rows) => {
       res.render('customers_edit', {
         data: rows[0]
       })
@@ -176,21 +178,109 @@ controller.editPAGOS = (req, res) => {
 };
 
 controller.updatePAGOS = (req, res) => {
-  const { AD } = req.params;
+  const { ID } = req.params;
   const newresidente = req.body;
   req.getConnection((err, conn) => {
-
-  conn.query('UPDATE PAGOS set ? where id = ?', [newresidente, AD], (err, rows) => {
+  conn.query('UPDATE PAGOS set ? where id = ?', [newresidente, ID], (err, rows) => {
     res.redirect('/PagosCRUD');
   });
   });
 };
 
 controller.deletePAGOS = (req, res) => {
-  const { AD } = req.params;
+  const { ID } = req.params;
   req.getConnection((err, connection) => {
-    connection.query('DELETE FROM PAGOS WHERE id = ?', [AD], (err, rows) => {
+    connection.query('DELETE FROM PAGOS WHERE id = ?', [ID], (err, rows) => {
       res.redirect('/PagosCRUD');
+    });
+  });
+}
+
+/* <Control Tablas Post--------------------------------------------------------------------------------------------------------------------> */
+
+controller.listPost = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM POST', (err, residentes) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('Post', {
+        data: residentes
+     });
+    });
+  });
+};
+
+controller.listPostADM = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM POST', (err, residentes) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('Post_ADM', {
+        data: residentes
+     });
+    });
+  });
+};
+
+controller.listPostcrear = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM POST', (err, residentes) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('Post_crear', {
+        data: residentes
+     });
+    });
+  });
+};
+
+controller.listPostcrearADM = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM POST', (err, residentes) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('Post_crearADM', {
+        data: residentes
+     });
+    });
+  });
+};
+
+
+
+
+controller.savePost = (req, res) => {
+  const data = req.body;
+  console.log(req.body)
+  req.getConnection((err, connection) => {
+    const query = connection.query('INSERT INTO POST set ?', data, (err, residente) => {
+      console.log(residente)
+      res.redirect('/Post');
+    })
+  })
+};
+
+controller.savePostADM = (req, res) => {
+  const data = req.body;
+  console.log(req.body)
+  req.getConnection((err, connection) => {
+    const query = connection.query('INSERT INTO POST set ?', data, (err, residente) => {
+      console.log(residente)
+      res.redirect('/PostADM');
+    })
+  })
+};
+
+
+controller.deletePost = (req, res) => {
+  const { ID } = req.params;
+  req.getConnection((err, connection) => {
+    connection.query('DELETE FROM POST WHERE id = ?', [ID], (err, rows) => {
+      res.redirect('/PostADM');
     });
   });
 }

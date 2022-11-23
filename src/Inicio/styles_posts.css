@@ -1,16 +1,6 @@
 @charset "utf-8";
-/*
-Template Name: Chillaid
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Copyright: OS-Templates.com
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
-File: Layout CSS
-*/
-
-@import url("../webfonts/css/fontawesome-all.min.css");
-@import url("Estilos_Res/framework.css");
+@import url("/webfonts");
+@import url("framework.css");
 
 /* Rows
 --------------------------------------------------------------------------------------------------------------- */

@@ -9,7 +9,7 @@ router.post('/update/:id', customerController.update);
 router.get('/delete/:id', customerController.delete);
 
 /*CRUD ALERTAS------------------------------------------------------- */
-router.get('/Alertas', customerController.listALERTASCRUD);
+router.get('/Alertas', customerController.listALERTAS);
 router.get('/AlertasCRUD', customerController.listALERTASCRUD);
 router.post('/addAlertas', customerController.saveALERTAS);
 router.get('/ActualizarAlertas/:ID', customerController.editALERTAS);
@@ -24,6 +24,14 @@ router.get('/Actualizar/:ID', customerController.editPAGOS);
 router.post('/updateAlertas/:ID', customerController.updatePAGOS);
 router.get('/BorrarPagos/:ID', customerController.deletePAGOS);
 
+/*POST------------------------------------------------------- */
+router.get('/Post', customerController.listPost);
+router.get('/Postcrear', customerController.listPostcrear);
+router.get('/PostcrearADM', customerController.listPostcrearADM);
+router.get('/PostADM', customerController.listPostADM);
+router.post('/addpost', customerController.savePost);
+router.post('/addpostADM', customerController.savePostADM);
+router.get('/Borrarpost/:ID', customerController.deletePost);
 
 /*Ruta Index------------------------------------------------------- */
 router.get("/", function(req, res){
@@ -35,6 +43,11 @@ router.get("/", function(req, res){
       router.get("/Inicio", function(req, res){
         res.sendfile("./src/Inicio/layout.css");    //INICIO
       });
+
+      router.get("/epost", function(req, res){
+        res.sendfile("./src/Inicio/styles_posts.css");    //Post
+      });
+
      router.get("/backgrounds", function(req, res){
         res.sendfile("./src/backgrounds/03.png");    //FONDO
       });
@@ -79,6 +92,10 @@ router.get("/", function(req, res){
 
       router.get("/Luz", function(req, res){
         res.sendfile("./src/Pagos/images/Usuarios/2.png");    //aqui envias el HTML
+      });
+
+      router.get("/com", function(req, res){
+        res.sendfile("./src/Administrador/images/chat/comentarios.png");    //aqui envias el HTML
       });
 
 
