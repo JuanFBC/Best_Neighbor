@@ -99,7 +99,7 @@ controller.editALERTAS = (req, res) => {
   const { ID } = req.params;
   req.getConnection((err, conn) => {
     conn.query("SELECT * FROM ALERTAS WHERE ID = ?", [ID], (err, rows) => {
-      res.render('customers_edit', {
+      res.render('Edit_Alertas', {
         data: rows[0]
       })
     });
@@ -110,7 +110,6 @@ controller.updateALERTAS = (req, res) => {
   const { ID } = req.params;
   const newresidente = req.body;
   req.getConnection((err, conn) => {
-
   conn.query('UPDATE ALERTAS set ? where ID = ?', [newresidente, ID], (err, rows) => {
     res.redirect('/AlertasCRUD');
   });
@@ -170,7 +169,7 @@ controller.editPAGOS = (req, res) => {
   const { ID } = req.params;
   req.getConnection((err, conn) => {
     conn.query("SELECT * FROM PAGOS WHERE id = ?", [ID], (err, rows) => {
-      res.render('customers_edit', {
+      res.render('Edit_Pagos', {
         data: rows[0]
       })
     });
@@ -284,4 +283,21 @@ controller.deletePost = (req, res) => {
     });
   });
 }
+
+
+/* <Control Tablas Post--------------------------------------------------------------------------------------------------------------------> */
+
+
+controller.listDat = (req, res) => {
+  req.getConnection((err, conn) => {
+    conn.query('SELECT * FROM residente', (err, residentes) => {
+     if (err) {
+      res.json(err);
+     }
+     res.render('Validar', {
+        data: residentes
+     });
+    });
+  });
+};
 module.exports = controller;

@@ -1,0 +1,32 @@
+
+<%- include('partials/_header') %>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 offset-md-3 card">
+      <div class="card-body">
+        <form action="/updaeAlertas/<%= data.ID %>" method="POST">
+          <div class="form-group">
+            <input type="text" name="TITULO" value="<%= data.TITULO%>" placeholder="Nombre" class="form-control" autofocus>
+          </div>
+          <div class="form-group">
+            <input type="text" name="ID_USUARIO" value="<%= data.ID_USUARIO%>" placeholder="Apellido" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="TIPO" value="<%= data.TIPO%>" placeholder="Correo electrónico" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="DESCRIPCION" value="<%= data.DESCRIPCION%>" placeholder="Número de elefono" class="form-control">
+          </div>
+
+          <button type="submit" class="btn btn-primary">
+            Guardar
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/_footer') %>
+

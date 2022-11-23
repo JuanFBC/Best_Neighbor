@@ -12,16 +12,16 @@ router.get('/delete/:id', customerController.delete);
 router.get('/Alertas', customerController.listALERTAS);
 router.get('/AlertasCRUD', customerController.listALERTASCRUD);
 router.post('/addAlertas', customerController.saveALERTAS);
-router.get('/ActualizarAlertas/:ID', customerController.editALERTAS);
-router.post('/updateAlertas/:ID', customerController.updateALERTAS);
+router.get('/updaeAlertas/:ID', customerController.editALERTAS);
+router.post('/updaeAlertas/:ID', customerController.updateALERTAS);
 router.get('/BorrarAlertas/:ID', customerController.deleteALERTAS);
 
 /*CRUD PAGOS------------------------------------------------------- */
 router.get('/pagos', customerController.listPAGOS);
 router.get('/PagosCRUD', customerController.listPAGOSCRUD);
 router.post('/addpagos', customerController.savePAGOS);
-router.get('/Actualizar/:ID', customerController.editPAGOS);
-router.post('/updateAlertas/:ID', customerController.updatePAGOS);
+router.get('/updatePagos/:ID', customerController.editPAGOS);
+router.post('/updatePagos/:ID', customerController.updatePAGOS);
 router.get('/BorrarPagos/:ID', customerController.deletePAGOS);
 
 /*POST------------------------------------------------------- */
@@ -32,6 +32,9 @@ router.get('/PostADM', customerController.listPostADM);
 router.post('/addpost', customerController.savePost);
 router.post('/addpostADM', customerController.savePostADM);
 router.get('/Borrarpost/:ID', customerController.deletePost);
+
+/*Validaciones------------------------------------------------------- */
+router.get('/DatUsuario', customerController.listDat);
 
 /*Ruta Index------------------------------------------------------- */
 router.get("/", function(req, res){

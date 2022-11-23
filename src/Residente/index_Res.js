@@ -1,3 +1,8 @@
+
+const router = require('express').Router();
+const customerController = require('../controllers/customerController');
+const { get, use } = require('../routes/customer');
+
 var user1 = {
     correo: 'alejo9017@gmail.com',
     contraseña: '12345',
@@ -11,17 +16,25 @@ var user2 = {
     contraseña: '12345',
     activo: false
 }
-
-
+var user;
+var  pass;
 
 var usuarios = [user1, user2];
 var usuarioAValidar = [];
 
-function login() {
+function log(){
+     var user = document.getElementById("ID").value;
+     var pass = document.getElementById("contraseña").value;
+    window.alert("Nada" + user);
+
+}
+
+function login(a) {
     var user, pass;
 
     user = document.getElementById("correo").value;
     pass = document.getElementById("contraseña").value;
+
 
     usuarioAValidar = buscarElUsuarioRegistrado(user);
 

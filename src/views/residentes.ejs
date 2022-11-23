@@ -61,7 +61,7 @@ Licence URI: https://www.os-templates.com/template-terms
             <input type="text" name="telefono" placeholder="Número de elefono" class="like-taADMIN3" autofocus>
           </div>
           <div class="form-group">
-            <input type="text" name="id_conjunto" placeholder="Id Conjunto" class="like-taADMIN3" autofocus>
+            <input type="text" name="id_conjunto" placeholder="id_conjunto" class="like-taADMIN3" autofocus>
           </div>
           <div class="form-group">
             <input type="text" name="nro_torre" placeholder="Número de Torre" class="like-taADMIN3" autofocus>
@@ -75,6 +75,8 @@ Licence URI: https://www.os-templates.com/template-terms
         </form>
       </div>
     </div>
+
+
       <table class="table table-bordered table-hover">
         <thead class="like-taADMIN">
           <tr>
@@ -93,8 +95,7 @@ Licence URI: https://www.os-templates.com/template-terms
           <% if (data) { %>
             <% for(var i = 0; i < data.length; i++) { %>
               <tr class="like-taADMIN2">
-                <td><h3><%= (i + 1) %></td>
-                 
+                <td><h3><%= (i + 1) %></td>                 
                 <td><h3><%= data[i].nombre %></td>
                 <td><h3><%= data[i].apellido %></td>
                 <td><h3><%= data[i].correo %></td>
@@ -113,5 +114,7 @@ Licence URI: https://www.os-templates.com/template-terms
       </table>
   </div>
 </div>
+
+ 
 
 <%- include('partials/_footer') %>
