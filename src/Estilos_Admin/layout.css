@@ -820,3 +820,33 @@ body {
     text-decoration: underline;
   }
   
+  .perfil-name{
+    width: 50%;
+    margin: 20px 30px;
+    color: black;
+    padding: 15px;
+  }
+
+  .perfil-image{
+    width:460; 
+    height:215;
+    float: right;
+    margin-left: 15px;
+  }
+
+  /*Estilos botones*/
+
+  .botones{
+    border: 1px solid;
+    color: lightsalmon; /*anchura, estilo y color borde*/
+    padding: 10px; /*espacio alrededor texto*/
+    background-color:lightsalmon; /*color botón*/
+    color: #ffffff; /*color texto*/
+    text-decoration: none; /*decoración texto*/
+    text-transform: uppercase; /*capitalización texto*/
+    font-family: 'Helvetica', sans-serif; /*tipografía texto*/
+    border-radius: 50px; /*bordes redondos*/
+
+  }
+
+  
